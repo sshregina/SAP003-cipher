@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
+
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+
+    <div align="center" id="root">
+
+      <h1>Cifra de César</h1>
+
+        <div id="perguntaCifrar">
+          
+          <h2>Digite a mensagem que deseja codificar</h2>
+          <input type="text" id="textoParaCifrar">
+          <h2>Escolha a chave que irá cifrar sua mensagem</h2>
+          <input type="number" id="cifra">
+
+        </div>
+
+        <p id="botaoCifrar">
+          <button type="text" onclick="pegaEncode(event)">Cifrar</button>
+        </p>
+        
+        <div>
+        <p id="mostrarCifra"></p>
+        </div>
+
+        <div id="perguntaDecifrar">
+
+          <h2>Digite a mensagem que deseja decodificar</h2>
+          <input type="text" id="textoParaDecifrar">
+          <h2>Escolha a chave que irá decifrar sua mensagem</h2>
+          <input type="number" id="decifra">
+        
+        </div>
+
+        <p id="botaoDecifrar">
+          <button type="text" onclick="pegaDecode(event)">Decifrar</button>
+        </p>
+      
+        <p id="mostrarDecifra"></p>
+
     </div>
+    
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
