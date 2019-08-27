@@ -1,20 +1,18 @@
+document.getElementById("botao").addEventListener("click", pegaEncode);
+document.getElementById("botao1").addEventListener("click", pegaDecode);
+
 function pegaEncode(event) {
   event.preventDefault();
   const texto = document.getElementById("textoParaCifrar").value;
   const offset = parseInt(document.getElementById("cifra").value);
   const textoCifrado = window.cipher.encode(offset, texto);
-  document.getElementById("mostrarCifra").innerHTML = `<p> Sua mensagem codificada é: </p>${textoCifrado}`;
+  document.getElementById("mostrarCifra").innerHTML = textoCifrado;
 }
 
 function pegaDecode(event) {
   event.preventDefault();
-  const texto = document.getElementById("textoParaDecifrar").value;
-  const offset = parseInt(document.getElementById("decifra").value);
+  const texto = document.getElementById("mostrarCifra").value;
+  const offset = parseInt(document.getElementById("cifra").value);
   const textoCifrado = window.cipher.decode(offset, texto);
-  document.getElementById("mostrarDecifra").innerHTML = `<p> Sua mensagem decodificada é: </p>${textoCifrado}`;
+  document.getElementById("mostrarCifra").innerHTML = textoCifrado;
 }
-
-window.controlaFormulario = {
-  pegaDecode: pegaDecode,
-  pegaEncode: pegaEncode
-};
