@@ -9,43 +9,35 @@
   </head>
   <body>
 
-    <div align="center" id="root">
+    <section >
 
-      <h1>Cifra de César</h1>
-
-        <div id="perguntaCifrar">
-          
-          <h2>Digite a mensagem que deseja codificar</h2>
-          <input type="text" id="textoParaCifrar">
-          <h2>Escolha a chave que irá cifrar sua mensagem</h2>
-          <input type="number" id="cifra">
-
-        </div>
-
-        <p id="botaoCifrar">
-          <button type="text" onclick="pegaEncode(event)">Cifrar</button>
-        </p>
+      <main>
         
-        <div>
-        <p id="mostrarCifra"></p>
-        </div>
+        <h1>Titulo</h1>
 
-        <div id="perguntaDecifrar">
+          <form id="perguntaCifrar">
+            <h3>Digite a mensagem que deseja codificar</h3>
+            <input type="text" id="textoParaCifrar" placeholder="Digite sua mensagem">
+          </form>
 
-          <h2>Digite a mensagem que deseja decodificar</h2>
-          <input type="text" id="textoParaDecifrar">
-          <h2>Escolha a chave que irá decifrar sua mensagem</h2>
-          <input type="number" id="decifra">
+          <form>
+            <h3>Escolha a chave que irá cifrar sua mensagem</h3>
+            <input  type="number" id="cifra">
+          </form><br><br>
+
+          <h3>Resultado:</h3>
+
+          <div>
+            <output name="resultado" id="mostrarCifra"></output>
+          </div><br><br>
+
+          <p>
+            <button class="botao" id="botao">Cifrar</button>&ensp;<button class="botao" id="botao1">Decifrar</button>
+          </p>
         
-        </div>
 
-        <p id="botaoDecifrar">
-          <button type="text" onclick="pegaDecode(event)">Decifrar</button>
-        </p>
-      
-        <p id="mostrarDecifra"></p>
-
-    </div>
+      </main>
+    </section>
     
     <script src="cipher.js"></script>
     <script src="index.js"></script>
