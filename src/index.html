@@ -10,33 +10,25 @@
   <body>
 
     <section >
-
-      <main>
         
-        <h1>Titulo</h1>
-
           <form id="perguntaCifrar">
-            <h3>Digite a mensagem que deseja codificar</h3>
-            <input type="text" id="textoParaCifrar" placeholder="Digite sua mensagem">
+            <label id="texto" for="textoParaCifrar">Digite a mensagem que deseja codificar:</label>
+            <label class="invisivel" id="textoCifrado" for="textoParaCifrar">Sua mensagem codificada é:</label>
+            <label class="invisivel" id="textoDecifrado" for="textoParaCifrar">Sua mensagem decodificada é:</label>
+            <textarea rows="5" id="textoParaCifrar" placeholder="Digite sua mensagem" autocomplete="off"></textarea>
+       
+            <label>Escolha a chave que irá cifrar ou decifrar sua mensagem:</label>
+            <input  type="number" id="cifra" placeholder="Digite um número">
           </form>
-
-          <form>
-            <h3>Escolha a chave que irá cifrar sua mensagem</h3>
-            <input  type="number" id="cifra">
-          </form><br><br>
-
-          <h3>Resultado:</h3>
+          
+          <br><br>
 
           <div>
-            <output name="resultado" id="mostrarCifra"></output>
-          </div><br><br>
-
-          <p>
-            <button class="botao" id="botao">Cifrar</button>&ensp;<button class="botao" id="botao1">Decifrar</button>
-          </p>
+            <button class="botao" id="btnEncode">Cifrar</button>
+            <button class="botao" id="btnDecode">Decifrar</button>
+            <button class="botao" id="btnLimpar">Limpar</button>
+          </div>
         
-
-      </main>
     </section>
     
     <script src="cipher.js"></script>

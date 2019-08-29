@@ -1,18 +1,41 @@
-document.getElementById("botao").addEventListener("click", pegaEncode);
-document.getElementById("botao1").addEventListener("click", pegaDecode);
+document.getElementById("btnEncode").addEventListener("click", pegaEncode);
+document.getElementById("btnDecode").addEventListener("click", pegaDecode);
+document.getElementById("btnLimpar").addEventListener("click", limparFormulario);
+
+const $texto = document.getElementById("textoParaCifrar");
 
 function pegaEncode(event) {
   event.preventDefault();
-  const texto = document.getElementById("textoParaCifrar").value;
+  const texto = $texto.value;
+  
   const offset = parseInt(document.getElementById("cifra").value);
+  if (!Number.isInteger(offset)) {
+    alert("Digite um número");
+    return;
+  }
   const textoCifrado = window.cipher.encode(offset, texto);
-  document.getElementById("mostrarCifra").innerHTML = textoCifrado;
+  $texto.value = textoCifrado;
+  document.getElementById("texto").classList.add("invisivel");
+  document.getElementById("textoCifrado").classList.remove("invisivel");
+  document.getElementById("textoDecifrado").classList.add("invisivel");
 }
 
 function pegaDecode(event) {
   event.preventDefault();
-  const texto = document.getElementById("mostrarCifra").value;
+  const texto = $texto.value;
   const offset = parseInt(document.getElementById("cifra").value);
   const textoCifrado = window.cipher.decode(offset, texto);
-  document.getElementById("mostrarCifra").innerHTML = textoCifrado;
+  $texto.value = textoCifrado;
+  document.getElementById("texto").classList.add("invisivel");
+  document.getElementById("textoCifrado").classList.add("invisivel");
+  document.getElementById("textoDecifrado").classList.remove("invisivel");
+}
+
+function limparFormulario(event) {
+  event.preventDefault();
+  document.getElementById("textoParaCifrar").value = "";
+  document.getElementById("cifra").value = "";
+  document.getElementById("texto").classList.remove("invisivel");
+  document.getElementById("textoCifrado").classList.add("invisivel");
+  document.getElementById("textoDecifrado").classList.add("invisivel");
 }
