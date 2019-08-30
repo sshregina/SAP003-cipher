@@ -7,9 +7,12 @@ const $texto = document.getElementById("textoParaCifrar");
 function pegaEncode(event) {
   event.preventDefault();
   const texto = $texto.value;
-  
+  if (!texto) {
+    alert("Digite um texto");
+    return;
+  }
   const offset = parseInt(document.getElementById("cifra").value);
-  if (!Number.isInteger(offset)) {
+  if (!offset) {
     alert("Digite um número");
     return;
   }

@@ -1,0 +1,67 @@
+body {
+    font-family: 'Lexend Mega', sans-serif;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/656/432/non_2x/seamless-pattern-of-key-and-lock-icon-flat-style-on-white-background-vector-illustration.jpg")
+}
+
+::placeholder {
+    color: rgb(80, 80, 82);
+    font-family: inherit;
+}
+
+section {
+    background-color: rgb(212, 149, 14);
+    text-align: center;
+    width: 400px;
+    padding: 50px 50px;
+    border: 2px solid rgb(1, 7, 20);
+    margin: 150px auto;
+    border-radius: 5%;
+    box-shadow: 10px 10px 20px 5px #6D7A85;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#textoParaCifrar {
+    width: 400px;
+    border: 1px solid white;
+    border-radius: 2px;
+    resize: vertical;
+    font-size: 20px
+}
+
+#cifra {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 2px;   
+    font-size: 20px 
+}
+
+
+button:hover {
+    background: #ccc;
+}
+
+.invisivel {
+    display: none;
+}
+
+.botao {
+   font-size: 20px;
+   padding: 18px 28px;
+   border-radius: 5px;
+   border: 0px solid;
+   cursor: pointer;
+   margin-right: 10px;
+   box-shadow: 5px 5px 10px 2px #6D7A85;
+}
+
+.resultado {
+    background: white;
+    border-radius: 2px;
+}
