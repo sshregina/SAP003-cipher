@@ -86,10 +86,10 @@ button:hover {
 }
 
 .bb8 {
-    height: 600px;
+    height: 700px;
     position: absolute;
     right: 0;
-    top: 175px;
+    top: 120px;
     z-index: 0;
 }
 
