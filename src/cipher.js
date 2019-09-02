@@ -11,6 +11,10 @@ function encode(offset, string) {
       const numerador = ((codigo-97+26+(offset % 26))%26)+97;
       const letra = String.fromCharCode(numerador);
       palavra.push(letra);
+    } else if (codigo >= 48 && codigo <= 57) {
+      const numerador = ((codigo-48+10+(offset % 10))%10)+48;
+      const letra = String.fromCharCode(numerador);
+      palavra.push(letra);
     } else {
       palavra.push(string[i]);
     }
