@@ -44,10 +44,10 @@ describe("cipher", () => {
       );
     });
 
-    it("should return '890' for '123' with offset -33", () => {
+    it("should return '123' for '456' with offset -33", () => {
       assert.equal(
-        cipher.encode(-33, "123"),
-        "890"
+        cipher.encode(-33, "456"),
+        "123"
       );
     });
     // Hacker edition
