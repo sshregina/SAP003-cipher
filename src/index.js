@@ -2,11 +2,9 @@ document.getElementById("btnEncode").addEventListener("click", pegaEncode);
 document.getElementById("btnDecode").addEventListener("click", pegaDecode);
 document.getElementById("btnLimpar").addEventListener("click", limparFormulario);
 
-const $texto = document.getElementById("textoParaCifrar");
-
 function pegaEncode(event) {
   event.preventDefault();
-  const texto = $texto.value;
+  const texto = document.getElementById("textoParaCifrar").value;
   if (!texto) {
     alert("Digite um texto");
     return;
@@ -17,7 +15,7 @@ function pegaEncode(event) {
     return;
   }
   const textoCifrado = window.cipher.encode(offset, texto);
-  $texto.value = textoCifrado;
+  document.getElementById("textoParaCifrar").value = textoCifrado;
   document.getElementById("texto").classList.add("invisivel");
   document.getElementById("textoCifrado").classList.remove("invisivel");
   document.getElementById("textoDecifrado").classList.add("invisivel");
@@ -25,10 +23,18 @@ function pegaEncode(event) {
 
 function pegaDecode(event) {
   event.preventDefault();
-  const texto = $texto.value;
+  const texto = document.getElementById("textoParaCifrar").value;
+  if (!texto) {
+    alert("Digite um texto");
+    return;
+  }
   const offset = parseInt(document.getElementById("cifra").value);
+  if (!offset) {
+    alert("Digite um número");
+    return;
+  }
   const textoCifrado = window.cipher.decode(offset, texto);
-  $texto.value = textoCifrado;
+  document.getElementById("textoParaCifrar").value = textoCifrado;
   document.getElementById("texto").classList.add("invisivel");
   document.getElementById("textoCifrado").classList.add("invisivel");
   document.getElementById("textoDecifrado").classList.remove("invisivel");
