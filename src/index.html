@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <title>Star Crypto</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/estrela-da-morte.png">
     <link rel="stylesheet" href="style.css" />
-
   </head>
   <body>
-
     <header>
-      <h1>Star<br>Crypto</h1>
+      <h1 class="title">Star<br>Crypto</h1>
     </header>
-
     <img src="imagens/r2d2.gif" class="r2d2">
     <img src="imagens/bb8.gif" class="bb8">
     <img src="imagens/darth.gif" class="darth">
-
-    <section >
-        
-          <form id="perguntaCifrar">
-            <label id="texto" for="textoParaCifrar">Digite a mensagem que deseja codificar:</label>
-            <label class="invisivel" id="textoCifrado" for="textoParaCifrar">Sua mensagem codificada é:</label>
-            <label class="invisivel" id="textoDecifrado" for="textoParaCifrar">Sua mensagem decodificada é:</label>
-            <textarea rows="5" id="textoParaCifrar" placeholder="Digite sua mensagem" autocomplete="off"></textarea>
-       
-            <label>Escolha a chave que irá cifrar ou decifrar sua mensagem:</label>
-            <input  type="number" id="cifra" placeholder="Digite um número">
-          </form>
-          
-          <br><br>
-
-          <div>
-            <button class="botao" id="btnEncode">Cifrar</button>
-            <button class="botao" id="btnDecode">Decifrar</button>
-            <button class="botao" id="btnLimpar">Limpar</button>
-          </div>
-        
+    <section class="tela">
+      <form>
+        <label id="text" for="cipher-text" class="label">Digite a mensagem que deseja codificar ou decodificar:</label>
+        <textarea rows="5" class="text" id="cipher-text" placeholder="Digite sua mensagem" autocomplete="off"></textarea>
+        <label class="label">Escolha a chave que irá cifrar ou decifrar sua mensagem:</label>
+        <input  type="number" class="cipher" id="cipher" placeholder="Digite um número">
+      </form>
+      <div>
+        <button class="button" id="btn-encode">Cifrar</button>
+        <button class="button" id="btn-decode">Decifrar</button>
+        <button class="button" id="btn-clear">Limpar</button>
+      </div>   
     </section>
-    
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>

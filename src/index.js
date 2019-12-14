@@ -1,50 +1,48 @@
-document.getElementById("btnEncode").addEventListener("click", pegaEncode);
-document.getElementById("btnDecode").addEventListener("click", pegaDecode);
-document.getElementById("btnLimpar").addEventListener("click", limparFormulario);
+document.getElementById("btn-encode").addEventListener("click", getEncode);
+document.getElementById("btn-decode").addEventListener("click", getDecode);
+document.getElementById("btn-clear").addEventListener("click", clearForm);
 
-function pegaEncode(event) {
+const text = document.getElementById("cipher-text");
+const numb = document.getElementById("cipher");
+const result = document.getElementById("text");
+
+function getEncode(event) {
   event.preventDefault();
-  const texto = document.getElementById("textoParaCifrar").value;
-  if (!texto) {
+  const textToCipher = text.value;
+  if (!textToCipher ) {
     alert("Digite um texto");
     return;
   }
-  const offset = parseInt(document.getElementById("cifra").value);
+  const offset = parseInt(numb.value);
   if (!offset) {
     alert("Digite um número");
     return;
   }
-  const textoCifrado = window.cipher.encode(offset, texto);
-  document.getElementById("textoParaCifrar").value = textoCifrado;
-  document.getElementById("texto").classList.add("invisivel");
-  document.getElementById("textoCifrado").classList.remove("invisivel");
-  document.getElementById("textoDecifrado").classList.add("invisivel");
+  const cipherText = window.cipher.encode(offset, textToCipher);
+  text.value = cipherText;
+  result.innerHTML = "Sua mensagem codificada é:";   
 }
 
-function pegaDecode(event) {
+function getDecode(event) {
   event.preventDefault();
-  const texto = document.getElementById("textoParaCifrar").value;
-  if (!texto) {
+  const textToCipher = text.value;
+  if (!textToCipher) {
     alert("Digite um texto");
     return;
   }
-  const offset = parseInt(document.getElementById("cifra").value);
+  const offset = parseInt(numb.value);
   if (!offset) {
     alert("Digite um número");
     return;
   }
-  const textoCifrado = window.cipher.decode(offset, texto);
-  document.getElementById("textoParaCifrar").value = textoCifrado;
-  document.getElementById("texto").classList.add("invisivel");
-  document.getElementById("textoCifrado").classList.add("invisivel");
-  document.getElementById("textoDecifrado").classList.remove("invisivel");
+  const cipherText = window.cipher.decode(offset, textToCipher);
+  text.value = cipherText;
+  result.innerHTML = "Sua mensagem decodificada é:";
 }
 
-function limparFormulario(event) {
+function clearForm(event) {
   event.preventDefault();
-  document.getElementById("textoParaCifrar").value = "";
-  document.getElementById("cifra").value = "";
-  document.getElementById("texto").classList.remove("invisivel");
-  document.getElementById("textoCifrado").classList.add("invisivel");
-  document.getElementById("textoDecifrado").classList.add("invisivel");
+  text.value = "";
+  numb.value = "";
+  result.innerHTML = "Digite a mensagem que deseja codificar ou decodificar:";
 }
